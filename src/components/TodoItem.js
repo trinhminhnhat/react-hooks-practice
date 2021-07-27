@@ -1,12 +1,12 @@
 import React from 'react'
 
-const TodoItem = ({ todoItem }) => {
+const TodoItem = ({ todoItem, deleteTodo }) => {
     const style = {
         backgroundColor: 'rgba(240, 240, 240, 0.7)',
     }
 
     return (
-        <li style={style} key={todoItem.id}>{todoItem.title}</li>
+        <li onClick={() => {deleteTodo(todoItem.id)}} style={style} key={todoItem.id}>{todoItem.title}</li>
     )
 }
 

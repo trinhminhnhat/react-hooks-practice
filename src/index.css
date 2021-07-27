@@ -42,6 +42,10 @@ body {
   padding: 10px;
 }
 
+.todo-list {
+  background-color: #ccc;
+}
+
 .todo-list ul {
   background-color: #ccc;
   padding: 10px;
@@ -56,4 +60,9 @@ body {
 
 .todo-list li + li{
   margin-top: 10px;
+}
+
+.todo-list li:hover {
+  opacity: 0.7;
+  text-decoration: line-through;
 }

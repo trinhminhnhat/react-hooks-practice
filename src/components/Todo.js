@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import TodoForm from './TodoForm'
 import TodoItem from './TodoItem'
 
 const Todo = () => {
@@ -20,12 +21,21 @@ const Todo = () => {
         }
     ])
 
+    const addTodo = todoItem => {
+        setTodo([...todo, todoItem])
+    }
+
+    const deleteTodo = id => {
+        setTodo(todo.filter(t => t.id !== id))
+    }
+
     return (
         <div className="todo-list">
+            <TodoForm addTodo={addTodo} />
             <ul>
                 {
                     todo.map(todoItem => (
-                        <TodoItem todoItem={todoItem} />
+                        <TodoItem key={todoItem.id} todoItem={todoItem} deleteTodo={deleteTodo} />
                     ))
                 }
             </ul>
